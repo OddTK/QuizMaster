@@ -36,6 +36,13 @@ public class Quiz : MonoBehaviour
             buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
         }
+        SetButtonState(false);
+    }
+
+    void GetNextQuestion()
+    {
+        SetButtonState(true);
+        DisplayQuestion();
     }
 
     void DisplayQuestion()
@@ -47,6 +54,15 @@ public class Quiz : MonoBehaviour
         // will look through all children of answer button and find the first TextMeshPro
         TextMeshProUGUI buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
         buttonText.text = question.GetAnswer(i);
+        }
+    }
+
+    void SetButtonState(bool state)
+    {
+        for(int i = 0; i < answerButtons.Length; i++)
+        {
+            Button button = answerButtons[i].GetComponent<Button>();
+            button.interactable = state;
         }
     }
 }
