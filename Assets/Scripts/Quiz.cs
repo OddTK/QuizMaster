@@ -15,14 +15,7 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
-        questionText.text = question.GetQuestion();
-
-        for(int i = 0; i < answerButtons.Length; i++)
-        {
-        // will look through all children of answer button and find the first TextMeshPro
-        TextMeshProUGUI buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-        buttonText.text = question.GetAnswer(i);
-        }
+        DisplayQuestion();
     }
 
     public void OnAnswerSelected(int index)
@@ -45,4 +38,15 @@ public class Quiz : MonoBehaviour
         }
     }
 
+    void DisplayQuestion()
+    {
+        questionText.text = question.GetQuestion();
+
+        for(int i = 0; i < answerButtons.Length; i++)
+        {
+        // will look through all children of answer button and find the first TextMeshPro
+        TextMeshProUGUI buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+        buttonText.text = question.GetAnswer(i);
+        }
+    }
 }
