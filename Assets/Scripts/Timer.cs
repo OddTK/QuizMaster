@@ -11,13 +11,16 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        // on every second update timer will run
         UpdateTimer();
     }
 
     void UpdateTimer()
     {
+        // timerValue is equal to timerValue - time.deltatime
         timerValue -= Time.deltaTime;
-
+        // if the player is answering a question but if the timer reaches zero then
+        // isAnsweringQuestion is false and time to show correct answer will trigger
         if(isAnsweringQuestion)
         {
             if(timerValue <= 0)
@@ -28,6 +31,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            // else if player is answering a question then time to answer the question till run
             if(timerValue <= 0)
             {
                 isAnsweringQuestion = true;

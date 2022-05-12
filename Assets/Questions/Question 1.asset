@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question 1
   m_EditorClassIdentifier: 
   question: What is the name of the festival that is to be held in Clock Town?
+  answers:
+  - The Festival of Fun
+  - The Festival of Friendship
+  - The Carnival of Time
+  - The Carnival of Unity
+  correctAnswerIndex: 2
